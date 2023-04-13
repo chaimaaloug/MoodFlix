@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block title %}Movie Detail
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+
+{% block body %}
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #070E2D;
+			text-align: center;
+		}
+		h1 {
+			font-size: 36px;
+			color: #536EE4;
+			margin-bottom: 22px;
+		}
+		h2 {
+			font-size: 24px;
+			color: #536EE4;
+			margin-bottom: 5px;
+		}
+		p {
+			font-size: 18px;
+			color: white;
+			line-height: 1.5;
+			margin-bottom: 20px;
+			padding: 1rem;
+		}
+		.genre {
+			background-color: white;
+			padding: 15px 10px;
+			border-radius: 5px;
+			display: inline-block;
+			margin-right: 10px;
+			font-size: 16px;
+			color: #536EE4;
+			font-weight: bold;
+			margin-top: 1rem;
+		}
+
+		img {
+			width: 250px;
+			border-radius: 8px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>The devil conspirary</h1>
+	<img class='image' src="../assets/movie.jpg"/>
+	<br>
+	<div class="genre">Action</div>
+	<div class="genre">Adventure</div>
+	<div class="genre">Science Fiction</div>
+	<h2>Publication Date:</h2>
+	<p>April 13, 2023</p>
+	<h2>Description:</h2>
+	<p>The hottest biotech company in the world has discovered they can clone history’s most influential people from the dead. Now, they are auctioning clones of Michelangelo, Galileo, Vivaldi, and others for tens of millions of dollars to the world’s ultra-rich. But when they steal the Shroud of Turin and clone the DNA of Jesus Christ, all hell breaks loose.</p>
+</body>{% endblock %}
