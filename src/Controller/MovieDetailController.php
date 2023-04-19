@@ -24,4 +24,21 @@ class MovieDetailController extends AbstractController
             'movie' => $movie
         ]);
     }
+
+    // Probablement inutile, mais exemple de logique ajoutant un movie dans la bdd directement depuis le serveur
+    // #[Route('/addMovie', name: 'create_movie')]
+    // public function createProduct(EntityManagerInterface $entityManager): Response
+    // {
+    //     $movie = new Movie();
+    //     $movie->setTitle('Bonjour');
+    //     $movie->setDescription('Ergonomic and stylish!');
+
+    //     // tell Doctrine you want to (eventually) save the movie (no queries yet)
+    //     $entityManager->persist($movie);
+
+    //     // actually executes the queries (i.e. the INSERT query)
+    //     $entityManager->flush();
+
+    //     return new Response('Saved new movie with id '.$movie->getId());
+    // }
 }
