@@ -52,7 +52,7 @@
 </head>
 
 <body>
-	<h1>The devil conspirary</h1>
+	<h1>{{movie.title}}</h1>
 	<img class='image' src="../assets/movie.jpg"/>
 	<br>
 	<div class="genre">Action</div>
@@ -61,5 +61,6 @@
 	<h2>Publication Date:</h2>
 	<p>April 13, 2023</p>
 	<h2>Description:</h2>
-	<p>The hottest biotech company in the world has discovered they can clone history’s most influential people from the dead. Now, they are auctioning clones of Michelangelo, Galileo, Vivaldi, and others for tens of millions of dollars to the world’s ultra-rich. But when they steal the Shroud of Turin and clone the DNA of Jesus Christ, all hell breaks loose.</p>
-</body>{% endblock %}
+	<p>{{movie.description}}</p>
+</body> 
+{% endblock %}
