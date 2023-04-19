@@ -63,4 +63,14 @@ class MovieRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+   public function findOneById($value): ?Movie
+   {
+       return $this->createQueryBuilder('movie')
+           ->andWhere('movie.id = :val')
+           ->setParameter('val', $value)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+   }
 }
