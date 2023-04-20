@@ -31,7 +31,7 @@ class Movie
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
 
-    #[ORM\ManyToMany(targetEntity: mood::class, inversedBy: 'movies')]
+    #[ORM\ManyToMany(targetEntity: Mood::class, inversedBy: 'movies')]
     private Collection $moods;
 
     public function __construct()
@@ -112,7 +112,7 @@ class Movie
         return $this->moods;
     }
 
-    public function addMood(mood $mood): self
+    public function addMood(Mood $mood): self
     {
         if (!$this->moods->contains($mood)) {
             $this->moods->add($mood);
@@ -121,7 +121,7 @@ class Movie
         return $this;
     }
 
-    public function removeMood(mood $mood): self
+    public function removeMood(Mood $mood): self
     {
         $this->moods->removeElement($mood);
 
