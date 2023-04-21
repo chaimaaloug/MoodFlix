@@ -18,11 +18,13 @@ class MovieDetailController extends AbstractController
         $movie = $entityManager->getRepository(Movie::class)->findOneById($id);
 
 
-        return $this->render('movie_detail/index.html.twig', 
-        [
-            'controller_name' => 'MovieDetailController',
-            'movie' => $movie
-        ]);
+        return $this->render(
+            'movie_detail/index.html.twig',
+            [
+                'controller_name' => 'MovieDetailController',
+                'movie' => $movie
+            ]
+        );
     }
 
     // Probablement inutile, mais exemple de logique ajoutant un movie dans la bdd directement depuis le serveur
