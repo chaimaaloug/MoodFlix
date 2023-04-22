@@ -12,7 +12,6 @@
 }
 
 .login-title {
-    padding: 15px; 
     font-size: 26px;
     font-weight: 600;
     text-align: center;
@@ -21,7 +20,6 @@
 .login-form {
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 16px;
 }
 
 .login-form label {
@@ -34,21 +32,21 @@
     padding: 1.2rem;
     border-radius: 9px;
     border: none;
+    margin-bottom: 1.2rem;
 }
 
 .btn--form {
     background-color: #070E2D;
     color: white;
     padding: 12px;
-    margin-top: 22px;
+    margin-top: 16px;
+    width: 100%;
 }
 
-.btn,
-.btn:link,
-.btn:visited {
+.btn {
     display: inline-block;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px !important;
     font-weight: 600;
     border-radius: 9px;
     border: none;
@@ -60,15 +58,17 @@
     color: #070E2D;
 }
 
-form p {
+.login-form p {
     color: #070E2D;
     font-style: italic;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 12px;
+    margin-top: 25px;
 }
 
-form p a {
+.login-form p a {
     color: white;
     text-decoration: underline;
     font-weight: 300;
+
 }

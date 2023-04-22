@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="login-form">
+			<h1 class="login-title">S'inscrire</h1>
+			{{ form_start(registrationForm) }}
+			<div>
+				{{ form_row(registrationForm.email) }}
+			</div>
+			<div>
+				{{ form_row(registrationForm.plainPassword, {
+						label: 'Password',
+					}) }}
+			</div>
+			<button type="submit" class="btn btn--form">S'inscrire</button>
+			{{ form_end(registrationForm) }}
+
+			<p>Vous êtes déjà inscrit sur MoodFlix ?
+				<a href="{{ path('app_login') }}">Connectez-vous.
+				</a>
+			</p>
+		</div>
+	</div>
+{% endblock %}
