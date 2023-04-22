@@ -23,21 +23,20 @@
 	</head>
 
 	<body>
-		<header class="header">
-			<nav>
-				<div class="logo">
-					<img src="assets/logo.png"/>
-				</div>
-				<div class="buttons">
-					<a href="{{ path('app_register') }}">
-						<button>S'inscrire</button>
-					</a>
-					<a href="{{ path('app_login') }}">
-						<button>Se connecter</button>
-					</a>
-				</div>
-			</nav>
-		</header>
+		{% if app.user %}
+			<header class="header">
+				<nav>
+					<div class="logo">
+						<img src="assets/logo.png"/>
+					</div>
+					<div class="buttons">
+						<a href="{{ path('app_logout') }}">
+							<button>Se déconnecter</button>
+						</a>
+					</div>
+				</nav>
+			</header>
+		{% endif %}
 		{% block body %}{% endblock %}
 	</body>
-</html>
+</html></body></html>

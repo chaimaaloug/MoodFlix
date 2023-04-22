@@ -3,4 +3,16 @@
 {% block title %}Home Page
 {% endblock %}
 
-{% block body %}{% endblock %}
+{% block body %}
+	<!-- Displaying User section -->
+	{% if is_granted('ROLE_ADMIN') and app.user  %}
+
+
+		<!-- Displaying Admin section -->
+		{% elseif is_granted('ROLE_USER') and app.user %}
+
+
+	{% endif %}
+
+
+{% endblock %}
