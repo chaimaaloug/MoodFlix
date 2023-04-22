@@ -47,3 +47,9 @@ a {
     cursor: pointer;
     font-weight: 300;
 }
+
+.alert {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
