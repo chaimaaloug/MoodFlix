@@ -4,11 +4,19 @@
 {% endblock %}
 
 {% block body %}
-	<!-- Displaying User section -->
+	<!-- Displaying Admin section -->
 	{% if is_granted('ROLE_ADMIN') and app.user  %}
 
+		<a href="{{ path('app_mood_index') }}">
+			Moods List
+		</a>
 
-		<!-- Displaying Admin section -->
+		<a href="{{ path('app_logout') }}">
+			Movies List
+		</a>
+
+
+		<!-- Displaying User section -->
 		{% elseif is_granted('ROLE_USER') and app.user %}
 
 
