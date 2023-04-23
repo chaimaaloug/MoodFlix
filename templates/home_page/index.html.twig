@@ -6,15 +6,15 @@
 {% block body %}
 	<!-- Displaying Admin section -->
 	{% if is_granted('ROLE_ADMIN') and app.user  %}
+		<div class="adminButtons">
+			<a href="{{ path('app_mood_index') }}" styles="color:#536EE4; font-size:20px;">
+				Moods List
+			</a>
 
-		<a href="{{ path('app_mood_index') }}">
-			Moods List
-		</a>
-
-		<a href="{{ path('app_logout') }}">
-			Movies List
-		</a>
-
+			<a href="{{ path('app_logout') }}" styles="color:#536EE4; font-size:20px;">
+				Movies List
+			</a>
+		</div>
 
 		<!-- Displaying User section -->
 		{% elseif is_granted('ROLE_USER') and app.user %}
