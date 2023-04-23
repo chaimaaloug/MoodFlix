@@ -1,48 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Movie index{% endblock %}
+{% block title %}Bibliothèque des Films{% endblock %}
 
 {% block body %}
 
-    <style>
-        .table{ color: #fff }
-    </style>
+    <div class="c-bibliotheque-head">
+        <h1 class="c-bibliotheque-title">Bibliothèque des Films</h1>
+        <a class="c-button" href="{{ path('app_movie_new') }}">+ Ajouter un film</a>
+    </div>
 
-    <h1>Movie index</h1>
+    <div class="c-bibliotheque-wrapper">
+        <table class="c-bibliotheque">
+            <thead>
+                <tr>
+                    <th>Affiche</th>
+                    <th>Titre</th>
+                    <th>Synopsis</th>
+                    <th>Date</th>
+                    <th>Video</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>
+                    <img
+                    src="{{ movie.picture }}"
+                    alt="" width="150">
+                    </td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.description }}</td>
+                    <td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
+                    <td>
+                    <iframe width="150" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </td>
+                    <td>
+                        <a class="c-button" href="{{ path('app_movie_show', {'id': movie.id}) }}">Voir</a>
+                        <a class="c-button c-button--outline" href="{{ path('app_movie_edit', {'id': movie.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Url_video</th>
-                <th>Picture</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for movie in movies %}
-            <tr>
-                <td>{{ movie.id }}</td>
-                <td>{{ movie.title }}</td>
-                <td>{{ movie.description }}</td>
-                <td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
-                <td>{{ movie.urlVideo }}</td>
-                <td>{{ movie.picture }}</td>
-                <td>
-                    <a href="{{ path('app_movie_show', {'id': movie.id}) }}">show</a>
-                    <a href="{{ path('app_movie_edit', {'id': movie.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_movie_new') }}">Create new</a>
 {% endblock %}

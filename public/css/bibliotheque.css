@@ -1,0 +1,115 @@
+
+.c-bibliotheque-head {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.6rem;
+}
+
+.c-bibliotheque-title {
+    color: #A7B4F1;
+}
+
+.c-bibliotheque-wrapper {
+    max-width: 1332px;
+    margin: 3.2rem auto 0 auto;
+    padding: 0 1.6rem;
+}
+
+.c-bibliotheque {
+    color: #fff;
+}
+
+.c-bibliotheque thead {
+    min-height: 40px;
+    background-color: #DCE1F9;
+    color: #070E2D;
+}
+
+.c-bibliotheque th,
+.c-bibliotheque td {
+    padding: 0 8px;
+}
+
+.c-bibliotheque th:nth-child(2),
+.c-bibliotheque td:nth-child(2) {
+    width: 20%;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+.c-bibliotheque th:nth-child(3),
+.c-bibliotheque td:nth-child(3) {
+    width: 30%;
+}
+
+.c-bibliotheque th:nth-child(4),
+.c-bibliotheque td:nth-child(4) {
+    width: 10%;
+    text-align: center;
+    min-width: 115px;
+}
+
+.c-bibliotheque th:nth-child(5),
+.c-bibliotheque td:nth-child(5) {}
+
+.c-bibliotheque th:nth-child(5),
+.c-bibliotheque td:nth-child(5) {}
+
+.c-bibliotheque th:nth-child(6),
+.c-bibliotheque td:nth-child(6) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+/*============ Buttons ===============*/
+
+.c-button {
+	background: #A7B4F1;
+	border: 1px solid transparent;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 40px;
+	padding: 0 24px;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: center;
+	color: #070E2D;
+	user-select: none;
+	cursor: pointer;
+	text-decoration: none;
+	box-sizing: border-box;
+	/* Remove IOS Style */
+	-webkit-appearance: none;
+}
+
+.c-button:hover:not([disabled]) {
+    text-decoration: none;
+    color: #A7B4F1;
+    border: 1px solid #A7B4F1;
+    background: transparent;
+  }
+
+.c-button:disabled,
+.c-button--disabled {
+    cursor: not-allowed;
+}
+
+.c-button--outline {
+    color: #A7B4F1;
+    border: 1px solid #A7B4F1;
+    background: transparent;
+}
+
+.c-button--outline:hover:not([disabled]) {
+    color: #070E2D;
+    border: 1px solid #070E2D;
+    background: #A7B4F1;
+}
