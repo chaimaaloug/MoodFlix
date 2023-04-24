@@ -35,7 +35,7 @@
                     <td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
                     <td>
                         {% for mood in movie.moods %}
-                            {{ mood.name }}{% if not loop.last %}, {% endif %}
+                            {{ mood.emoji }} {{ mood.name }}{% if not loop.last %}, {% endif %}
                         {% endfor %}
                     </td>
                     <td>
