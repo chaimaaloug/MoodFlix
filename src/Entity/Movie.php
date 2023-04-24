@@ -7,7 +7,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\JoinColumn;
 
 #[ORM\Entity(repositoryClass: MovieRepository::class)]
 class Movie
@@ -32,11 +31,7 @@ class Movie
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
 
-    
     #[ORM\ManyToMany(targetEntity: Mood::class, inversedBy: 'movies')]
-    #[ORM\JoinTable(name:"movie_mood"), JoinColumn(name:"movie_id", referencedColumnName:"id"),
-    inverseJoinColumns(name:"mood_id", referencedColumnName:"id")
-    ]
     private Collection $moods;
 
     public function __construct()
