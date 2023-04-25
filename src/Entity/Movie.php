@@ -126,6 +126,7 @@ class Movie
         return $this;
     }
 
+    
     public function removeMood(Mood $mood): self
     {
         $this->moods->removeElement($mood);
