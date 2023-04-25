@@ -13,6 +13,11 @@
                 <td>{{ movie.id }}</td>
             </tr>
             <tr>
+                <img
+                src="{{ movie.picture }}"
+                alt="" width="150">
+            </tr>
+            <tr>
                 <th>Description</th>
                 <td>{{ movie.description }}</td>
             </tr>
@@ -21,12 +26,10 @@
                 <td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>video</th>
-                <td>{{ movie.urlVideo }}</td>
-            </tr>
-            <tr>
-                <th>Picture</th>
-                <td>{{ movie.picture }}</td>
+                <th>Vidéo</th>
+                <td>
+                    <iframe width="150" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </td>
             </tr>
         </tbody>
     </table>
