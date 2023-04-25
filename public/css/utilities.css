@@ -12,6 +12,12 @@ a {
     text-decoration: none;    
 }
 
+.adminButtons a {
+    color: white !important;
+    margin-left: 1.37rem;
+    text-decoration: underline;
+}
+
 /*============ Header and Main Navigation ===============*/
 
 .header nav {
