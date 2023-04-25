@@ -39,6 +39,9 @@ class Movie
     ]
     private Collection $moods;
 
+    #[ORM\ManyToMany(targetEntity: Mood::class)]
+    private $mood;
+
     public function __construct()
     {
         $this->moods = new ArrayCollection();
@@ -125,11 +128,22 @@ class Movie
 
         return $this;
     }
-
     
     public function removeMood(Mood $mood): self
     {
         $this->moods->removeElement($mood);
+
+        return $this;
+    }
+
+    public function getMood(): ?Mood
+    {
+        return $this->mood;
+    }
+
+    public function setMood(?Mood $mood): self
+    {
+        $this->mood = $mood;
 
         return $this;
     }
