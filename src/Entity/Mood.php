@@ -96,7 +96,6 @@ class Mood
         if ($this->movies->removeElement($movie)) {
             $movie->removeMood($this);
         }
-
         return $this;
     }
 

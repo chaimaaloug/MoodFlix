@@ -30,6 +30,12 @@ h3 {
     color: #A7B4F1;
 }
 
+.adminButtons a {
+    color: white !important;
+    margin-left: 1.37rem;
+    text-decoration: underline;
+}
+
 /*============ Header and Main Navigation ===============*/
 
 .header nav {
@@ -70,6 +76,24 @@ h3 {
     font-weight: bold;
     text-align: center;
     color: #fff;
+}
+
+select {
+    width: 100%;
+    overflow-y: auto;
+    border-radius: 9px;
+    border: none;
+    margin-bottom: 1.2rem;
+    padding: 1rem 0;
+}
+
+select option {
+    border-bottom: 1px solid #070E2D;
+}
+
+option:checked {
+    background: #070E2D;
+    color: white;
 }
 
 /*============ Buttons ===============*/
@@ -118,3 +142,4 @@ h3 {
     border: 1px solid #070E2D;
     background: #A7B4F1;
 }
+
