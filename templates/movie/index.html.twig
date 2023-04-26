@@ -30,7 +30,7 @@
 				<tbody>
 					{% for movie in movies %}
 						<tr>
-							<td><img src="{{ movie.picture }}" alt="" width="150"></td>
+							<td><img src="{{ movie.picture }}" alt="" width="120px"></td>
 							<td>{{ movie.title }}</td>
 							<td class="description">{{ movie.description }}</td>
 							<td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
