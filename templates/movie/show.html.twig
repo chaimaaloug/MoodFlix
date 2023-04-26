@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Movie
+{% endblock %}
+
+{% block body %}
+	<a style="color:white; font-size:20px; text-decoration: underline; margin-left: 3rem" href="{{ path('app_movie_index') }}">Retourner à la liste</a>
+
+	<div class="container" style="margin-top: 3rem !important; width: 600px; !important">
+		<div id="table-container">
+			<table>
+				<tbody>
+
+					<tr>
+						<td>
+							<h2>{{ movie.title }}</h2>
+						</td>
+					</tr>
+
+					<tr>
+						<td><img src="{{ movie.picture }}" alt="" width="200px"></td>
+					</tr>
+
+					<tr>
+						<td>{{ movie.description }}</td>
+					</tr>
+
+					<tr>
+						<td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
+					</tr>
+
+					<tr>
+						<td>
+							<iframe width="350px" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

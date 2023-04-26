@@ -99,7 +99,7 @@ class Mood
         return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->name;
     }

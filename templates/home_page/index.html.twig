@@ -11,8 +11,72 @@
 		<!-- Displaying User section -->
 		{% elseif is_granted('ROLE_USER') and app.user %}
 
-
 	{% endif %}
 
+	<ul>
+    {% for mood in moods %}
+			<li><a href="{{ path('app_movies_list', {mood: mood.id}) }}">{{ mood.name }}</a></li>
+		{% endfor %}
+	</ul>
+
+
+	<table cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+			{% for mood in moods %}
+				<tr>
+					<td>{{ mood.id }}</td>
+					<td>{{ mood.name }}</td>
+					<td class="emojie">{{ mood.emoji }}</td>
+					<td>{{ mood.description }}</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+    <div class="c-bibliotheque-wrapper">
+        <table class="c-bibliotheque">
+            <thead>
+                <tr>
+                    <th>Affiche</th>
+                    <th>Titre</th>
+                    <th>Synopsis</th>
+                    <th>Date</th>
+                    <th>Mood</th>
+                    <th>Video</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+            {% for movie in movies %}
+                <tr>
+                    <td>
+                    <img
+                    src="{{ movie.picture }}"
+                    alt="" width="150">
+                    </td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.description }}</td>
+                    <td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
+                    <td>
+                        {% for mood in movie.moods %}
+                            {{ mood.emoji }}&nbsp;{{ mood.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                    <iframe width="150" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Aucun film trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
 {% endblock %}

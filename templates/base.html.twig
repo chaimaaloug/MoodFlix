@@ -6,14 +6,16 @@
 			{% block title %}Welcome!
 			{% endblock %}
 			| MoodFlix</title>
+		{# <linkrel="stylesheet" href="{{ asset('css/normalize.css') }}"> #}
+		{# <link rel="stylesheet" href="{{ asset('css/skeleton.css') }}"> #}
 		<link rel="stylesheet" href="{{ asset('css/loginSignUpPage.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/movieDetail.css') }}">
-		<link rel="stylesheet" href="{{ asset('css/homePage.css') }}">
+		<link
+		rel="stylesheet" href="{{ asset('css/homePage.css') }}">
+		{#<link rel="stylesheet" href="{{ asset('css/bibliotheque.css') }}">#}
 		<link rel="stylesheet" href="{{ asset('css/crudTable.css') }}">
 		<link rel="stylesheet" href="{{ asset('css/utilities.css') }}">
-		<link
-		rel="icon" href="../assets/logo.png">
-		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		<link rel="icon" href="../assets/logo.png">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -36,7 +38,7 @@
 								Moods List
 							</a>
 
-							<a href="{{ path('app_mood_index') }}">
+							<a href="{{ path('app_movie_index') }}">
 								Movies List
 							</a>
 						</div>
@@ -49,6 +51,9 @@
 				</nav>
 			</header>
 		{% endif %}
-		{% block body %}{% endblock %}
+
+		{% block body %}
+		
+		{% endblock %}
 	</body>
-</html></body></html>
+</html>
