@@ -1,0 +1,9 @@
+<a style="color:white; font-size:20px; text-decoration: underline; margin-left: 3rem" href="{{ path('app_movie_index') }}">Retourner à la liste</a>
+<div class="container">
+	<div class="login-form">
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button class="btn btn--form">{{ button_label|default('Enregistrer') }}</button>
+		{{ form_end(form) }}
+	</div>
+</div>

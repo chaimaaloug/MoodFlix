@@ -96,7 +96,11 @@ class Mood
         if ($this->movies->removeElement($movie)) {
             $movie->removeMood($this);
         }
-
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }

@@ -4,11 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<!-- Displaying User section -->
+	<!-- Displaying Admin section -->
 	{% if is_granted('ROLE_ADMIN') and app.user  %}
 
 
-		<!-- Displaying Admin section -->
+		<!-- Displaying User section -->
 		{% elseif is_granted('ROLE_USER') and app.user %}
 
 
