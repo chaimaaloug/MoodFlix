@@ -1,0 +1,100 @@
+/*============ Global Styles ===============*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&family=Poppins:wght@500&family=Roboto:ital,wght@0,300;0,500;0,700;0,900;1,700&family=Zen+Antique&display=swap');
+
+body {
+    background-color: #070E2D !important;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+textarea
+{
+    width: 90% !important;
+    height: 120px;
+    padding: 1.2rem;
+    border-radius: 9px;
+    border: none;
+    margin-bottom: 1.2rem;
+    resize: none;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/*
+h1,
+h2,
+h3 {
+    color: #A7B4F1;
+}
+*/
+
+.adminButtons a {
+    color: white !important;
+    margin-left: 1.37rem;
+    text-decoration: underline;
+}
+
+/*============ Header and Main Navigation ===============*/
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header .logo img {
+    width: 157px;
+}
+
+.header .buttons button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #536EE4;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.header .buttons button {
+    margin-left: 1rem;
+    padding: 0.5rem 1.4rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #536EE4;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 700 !important;
+}
+
+.alert {
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+select {
+    width: 100%;
+    overflow-y: auto;
+    border-radius: 9px;
+    border: none;
+    margin-bottom: 1.2rem;
+    padding: 1rem 0;
+}
+
+select option {
+    border-bottom: 1px solid #070E2D;
+}
+
+option:checked {
+    background: #070E2D;
+    color: white;
+}
+

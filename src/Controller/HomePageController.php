@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class SignupController extends AbstractController
+class HomePageController extends AbstractController
 {
-    #[Route('/signup', name: 'app_signup')]
+    #[Route('/home-page', name: 'app_home_page')]
     public function index(): Response
     {
-        return $this->render('signup/index.html.twig', [
-            'controller_name' => 'SignupController',
+        return $this->render('home_page/index.html.twig', [
+            'controller_name' => 'HomePageController',
         ]);
     }
 }
