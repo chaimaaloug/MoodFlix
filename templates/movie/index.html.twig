@@ -1,58 +1,63 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bibliothèque des Films{% endblock %}
+{% block title %}Bibliothèque des Films
+{% endblock %}
 
 {% block body %}
 
-    <div class="c-bibliotheque-head">
-        <h1 class="c-bibliotheque-title">Bibliothèque des Films</h1>
-        <a class="c-button" href="{{ path('app_movie_new') }}">+ Ajouter un film</a>
-    </div>
+	<section>
+		<h1>Bibliothèque des Films</h1>
+		<a href="{{ path('app_movie_new') }}">
+			<button type="submit" style="padding:10px 15px; font-weight: 500; font-style: 15px; margin-bottom: 0.89rem; background-color:#536EE4; color: white; outline: none; border: none; font-size: 20px; font-weight: bold;">+ Ajouter un film</button>
+		</a>
+		<div class="tbl-header">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>Affiche</th>
+						<th>Titre</th>
+						<th class="description">Description</th>
+						<th>Date</th>
+						<th>Mood</th>
+						<th>Video</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl-content">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+					{% for movie in movies %}
+						<tr>
+							<td><img src="{{ movie.picture }}" alt="" width="150"></td>
+							<td>{{ movie.title }}</td>
+							<td class="description">{{ movie.description }}</td>
+							<td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
+							<td class="emojie">
+								{% for mood in movie.moods %}
+									{{ mood.emoji }}&nbsp;{{ mood.name }}
+									{% if not loop.last %},
+									{% endif %}
+								{% endfor %}
+							</td>
+							<td>
+								<iframe width="150" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</td>
 
-    <div class="c-bibliotheque-wrapper">
-        <table class="c-bibliotheque">
-            <thead>
-                <tr>
-                    <th>Affiche</th>
-                    <th>Titre</th>
-                    <th>Synopsis</th>
-                    <th>Date</th>
-                    <th>Mood</th>
-                    <th>Video</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-            {% for movie in movies %}
-                <tr>
-                    <td>
-                    <img
-                    src="{{ movie.picture }}"
-                    alt="" width="150">
-                    </td>
-                    <td>{{ movie.title }}</td>
-                    <td>{{ movie.description }}</td>
-                    <td>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</td>
-                    <td>
-                        {% for mood in movie.moods %}
-                            {{ mood.emoji }}&nbsp;{{ mood.name }}{% if not loop.last %}, {% endif %}
-                        {% endfor %}
-                    </td>
-                    <td>
-                    <iframe width="150" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </td>
-                    <td>
-                        <a class="c-button" href="{{ path('app_movie_show', {'id': movie.id}) }}">Voir</a>
-                        <a class="c-button c-button--outline" href="{{ path('app_movie_edit', {'id': movie.id}) }}">Modifier</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="7">Aucun film trouvé</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+							<td class="">
+								<a href="{{ path('app_movie_edit', {'id': movie.id}) }}"><img src="https://img.icons8.com/3d-fluency/30/null/edit.png"/></a>
+								{{ include('movie/_delete_form.html.twig') }}
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">Aucun film trouvé</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</section>
 
 {% endblock %}
