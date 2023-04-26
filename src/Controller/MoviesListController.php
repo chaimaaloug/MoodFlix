@@ -11,8 +11,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MoviesListController extends AbstractController
 {
-    #[Route('/movies/list/{mood}', name: 'app_movies_list')]
-    public function index(Mood $mood, MovieRepository $movieRepository): Response
+    #[Route('/movies/list', name: 'app_movies_list')]
+    public function index(MovieRepository $movieRepository): Response
+    {
+    
+        return $this->render('movies_list/index.html.twig', [
+            'movies' => $movieRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/movies/list/{mood}', name: 'app_movies_list_mood')]
+    public function new(Mood $mood, MovieRepository $movieRepository): Response
     {
         $movies = $movieRepository->findBy(['mood' => $mood]);
     
