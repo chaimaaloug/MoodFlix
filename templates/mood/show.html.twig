@@ -5,31 +5,32 @@
 
 {% block body %}
 	<div class="container">
-		<h1>List des Mood</h1>
-		<div id="table-container">
-			<table>
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Name</th>
-						<th>Emoji</th>
-						<th>Description</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{{ mood.id }}</td>
-						<td>{{ mood.name }}</td>
-						<td>{{ mood.emoji }}</td>
-						<td>{{ mood.description }}</td>
-						<td class="actionButtons">
-							<a href="{{ path('app_mood_edit', {'id': mood.id}) }}">Modifier</a>
-							{{ include('mood/_delete_form.html.twig') }}
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<a style="color:white; font-size:20px; text-decoration: underline; margin-left: 3rem" href="{{ path('app_mood_index') }}">Retourner à la liste</a>
+		<div class="container" style="margin-top: 3rem !important;">
+			<div id="table-container">
+				<table>
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Emoji</th>
+							<th>Description</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{ mood.id }}</td>
+							<td>{{ mood.name }}</td>
+							<td>{{ mood.emoji }}</td>
+							<td>{{ mood.description }}</td>
+							<td class="actionButtons">
+								<a href="{{ path('app_mood_edit', {'id': mood.id}) }}">Modifier</a>
+								{{ include('mood/_delete_form.html.twig') }}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</div>
-{% endblock %}
+	{% endblock %}
