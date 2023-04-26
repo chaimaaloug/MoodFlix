@@ -4,23 +4,58 @@
 
 {% block body %}
 <style>
-    .page-list-movies { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .page-list-movies code { background: #F5F5F5; padding: 2px 6px; }
-    .movie-card { background-color: #231244; color: #fff;}
-    .movie-card h2 {font-size: 2em;}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #070E2D;
+        text-align: center;
+    }
+    .page-list-movies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 1em auto;
+        max-width: 800px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #fff;
+        margin-bottom: 22px;
+    }
+    .movie-card {
+        width: 200px;
+        background-color: #231244;
+        color: #fff;
+    }
+    .movie-card h2 {
+        font-size: 25px;
+        color: #536EE4;
+        margin-bottom: 22px;
+    }
+    .movie-card img {
+        width: 200px;
+        height: auto;
+    }
+    .movie-card p {
+        padding: 0 5px;
+    }
 </style>
 
+<h1>Liste des films</h1>
 <div class="page-list-movies">
-    <h1>Liste des films</h1>
-    {# {% for movie in movies %} #}
-    {% for i in 1..5 %}
+    {% for movie in movies %}
+    {# {{ dump(movie) }} #}
+    {# {% for i in 1..5 %} #}
         <div class="movie-card">
             {# <img src="{{ movie.image }}" alt="{{ movie.alt }}">
             <h2>{{ movie.name }}</h2>
             <p>{{ movie.description }}</p> #}
-            <img src="" alt="">
-            <h2>Titre test : la revanche</h2>
-            <p>Dans une ambiance sombre de revanche le test s'en va chercher son némésis pour lui foutre une raclée.</p>
+            <img src="{{ movie.picture }}" alt="">
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.description }}</p>
+            {# <p>Dans une ambiance sombre de revanche le test s'en va chercher son némésis pour lui foutre une raclée.</p> #}
         </div>
     {% endfor %}
 </div>
