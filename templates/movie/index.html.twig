@@ -42,12 +42,15 @@
 								{% endfor %}
 							</td>
 							<td>
-								<iframe width="150" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+								<iframe width="160px" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 							</td>
+
 
 							<td class="">
 								<a href="{{ path('app_movie_edit', {'id': movie.id}) }}"><img src="https://img.icons8.com/3d-fluency/30/null/edit.png"/></a>
 								{{ include('movie/_delete_form.html.twig') }}
+								<a href="{{ path('app_movie_show', {'id': movie.id}) }}"><img src="https://img.icons8.com/3d-fluency/30/null/eyes-1.png"/></a>
+
 							</td>
 						</tr>
 					{% else %}
