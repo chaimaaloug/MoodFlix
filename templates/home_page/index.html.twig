@@ -11,12 +11,14 @@
 
 	{% elseif is_granted('ROLE_USER') and app.user %}
 		<!-- Displaying Moods list -->
-		<ul style="display:flex; list-style-type: none !important; text-align: center; justify-content: center;">
+		<ul style="display:flex; list-style-type: none !important; text-align: center; justify-content: center; gap: 24px">
 			{% for mood in moods %}
-				<div style="display:flex; flex-direction: column; border-radius: 10px; background-color:#536EE3 !important; text-align: center; padding: 10px 25px; justify-content: center; margin-left: 3.3rem; cursor: pointer; margin-top: 20px">
-					<li style=" font-size: 52px;" id="selectedMood">{{mood.emoji}}</li>
-					<li style="!important; font-size: 18px; align-self: center;">{{mood.name}}</li>
-				</div>
+				<li style="border-radius: 10px; background-color:#536EE3 !important; text-align: center; padding: 10px 25px; cursor: pointer; margin-top: 20px">
+					<a href="{{ path('app_movies_list', {mood: mood.id}) }}" style="display:flex; flex-direction: column; gap: 16px; color: #fff">
+						<span style=" font-size: 52px;" id="selectedMood">{{mood.emoji}}</span>
+						<span style="!important; font-size: 18px; align-self: center;">{{mood.name}}</span>
+					</a>
+				</li>
 			{% endfor %}
 		</ul>
 	{% endif %}
