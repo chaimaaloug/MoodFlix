@@ -1,65 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des films{% endblock %}
+{% block title %}Liste des films
+{% endblock %}
 
 {% block body %}
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #070E2D;
-        text-align: center;
-    }
-    .page-list-movies {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 24px;
-        margin: 32px auto;
-        max-width: 960px;
-        width: 100%;
-        font: 18px/1.5 sans-serif;
-    }
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #070E2D;
+			text-align: center;
+		}
+		.page-list-movies {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 24px;
+			margin: 32px auto;
+			max-width: 960px;
+			width: 100%;
+			font: 18px / 1.5 sans-serif;
+		}
 
-    h1 {
-        font-size: 36px;
-        color: #fff;
-        margin-bottom: 22px;
-    }
-    .movie-card {
-        width: 400px;
-        background-color: #231244;
-        color: #fff;
-        padding: 1.6rem;
-        text-align: left;
-        border-radius: 10px;
-    }
-    .movie-card h2 {
-        font-size: 25px;
-        color: #536EE4;
-        margin-bottom: 22px;
-        padding: 0 10px;
-    }
-    .movie-card img {
-        width: 300px;
-        height: auto;
-        border-radius: 10px;
-    }
-    .movie-card p {
-        padding: 0 10px;
-    }
-</style>
+		h1 {
+			font-size: 36px;
+			color: #fff;
+			margin-bottom: 22px;
+		}
+		.movie-card {
+			width: 400px;
+			background-color: #231244;
+			color: #fff;
+			padding: 1.6rem;
+			text-align: left;
+			border-radius: 10px;
+		}
+		.movie-card h2 {
+			font-size: 25px;
+			color: #536EE4;
+			margin-bottom: 22px;
+			padding: 0 10px;
+		}
+		.movie-card img {
+			width: 300px;
+			height: auto;
+			border-radius: 10px;
+		}
+		.movie-card p {
+			padding: 0 10px;
+		}
+	</style>
 
-<h1>Liste des films</h1>
-<div class="page-list-movies">
-    {% for movie in movies %}
-    <a href="{{ path('app_movie_detail') }}">
-        <div class="movie-card">
-            <img src="{{ movie.picture }}" alt="">
-            <h2>{{ movie.title }}</h2>
-            <p>{{ movie.description }}</p>
-        </div>
-    </a>
-    {% endfor %}
+	<h1>Liste des films</h1>
+	<div class="page-list-movies">
+		{% for movie in movies %}
+			<a href="{{ path('app_movie_detail', {id: movie.id}) }}">
+				<div class="movie-card">
+					<img src="{{ movie.picture }}" alt="">
+					<h2>{{ movie.title }}</h2>
+					<p>{{ movie.description }}</p>
+				</div>
+			</a>
+		{% endfor %}
 
-</div>
+	</div>
 {% endblock %}
