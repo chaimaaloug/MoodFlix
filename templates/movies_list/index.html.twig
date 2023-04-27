@@ -40,7 +40,7 @@
         padding: 0 10px;
     }
     .movie-card img {
-        width: 300px;
+        width: 400px;
         height: auto;
         border-radius: 10px;
     }
@@ -52,7 +52,7 @@
 <h1>Liste des films</h1>
 <div class="page-list-movies">
     {% for movie in movies %}
-    <a href="{{ path('app_movie_detail') }}">
+    <a href="{{ path('app_movie_detail', {id: movie.id}) }}">
         <div class="movie-card">
             <img src="{{ movie.picture }}" alt="">
             <h2>{{ movie.title }}</h2>

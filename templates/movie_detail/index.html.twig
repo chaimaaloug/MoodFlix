@@ -53,14 +53,16 @@
 
 <body>
 	<h1>{{movie.title}}</h1>
-	<img class='image' src="../assets/movie.jpg"/>
+	<img src="{{ movie.picture }}" alt="" width="200px">
 	<br>
 	<div class="genre">Action</div>
 	<div class="genre">Adventure</div>
 	<div class="genre">Science Fiction</div>
 	<h2>Publication Date:</h2>
-	<p>April 13, 2023</p>
+	<p>{{ movie.date ? movie.date|date('Y-m-d') : '' }}</p>
 	<h2>Description:</h2>
 	<p>{{movie.description}}</p>
+	<p>Vidéo :</p>
+	<iframe width="350px" height="200px" src="{{ movie.urlVideo }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </body> 
 {% endblock %}
