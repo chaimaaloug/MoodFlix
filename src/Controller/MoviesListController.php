@@ -23,6 +23,7 @@ class MoviesListController extends AbstractController
     #[Route('/movies/list/{mood}', name: 'app_movies_list_mood')]
     public function new(Mood $mood, MovieRepository $movieRepository): Response
     {
+        dd($mood);
         $movies = $movieRepository->findBy(['mood' => $mood]);
     
         return $this->render('movies_list/index.html.twig', [

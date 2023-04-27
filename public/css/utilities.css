@@ -31,10 +31,13 @@ h3 {
     color: #A7B4F1;
 }
 */
-
+.adminButtons {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
 .adminButtons a {
     color: white !important;
-    margin-left: 1.37rem;
     text-decoration: underline;
 }
 
