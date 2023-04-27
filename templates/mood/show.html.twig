@@ -1,35 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Moods List
+{% block title %}Moods Info
 {% endblock %}
 
 {% block body %}
-	<div class="container">
-		<h1>List des Mood</h1>
-		<div id="table-container">
-			<table>
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Name</th>
-						<th>Emoji</th>
-						<th>Description</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{{ mood.id }}</td>
-						<td>{{ mood.name }}</td>
-						<td>{{ mood.emoji }}</td>
-						<td>{{ mood.description }}</td>
-						<td class="actionButtons">
-							<a href="{{ path('app_mood_edit', {'id': mood.id}) }}">Modifier</a>
-							{{ include('mood/_delete_form.html.twig') }}
-						</td>
-					</tr>
-				</tbody>
-			</table>
+	<a style="color:white; font-size:20px; text-decoration: underline; margin-left: 3rem" href="{{ path('app_mood_index') }}">Retourner à la liste</a>
+
+	<div class="container" style="margin-top: 3rem !important; text-align: center; height: 200px; width: 310px;">
+		<div>
+			<tbody>
+
+				<tr>
+					<td>
+						<h2>{{ mood.name }}</h2>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<p>{{ mood.description }}
+						</p>
+					</td>
+				</tr><br>
+
+				<tr>
+					<td>
+						<p style="margin-top: 0; font-size: 34px;">{{ mood.emoji }}</p>
+					</td>
+				</tr>
+				<br>
+
+			</tbody>
 		</div>
 	</div>
 {% endblock %}
