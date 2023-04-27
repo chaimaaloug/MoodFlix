@@ -25,6 +25,7 @@
 			font-size: 36px;
 			color: #fff;
 			margin-bottom: 22px;
+			text-align: center;
 		}
 		.movie-card {
 			width: 400px;
@@ -56,8 +57,8 @@
 		{% for movie in movies %}
 			<a href="{{ path('app_movie_detail', {id: movie.id}) }}">
 				<div class="movie-card">
-					<img src="{{ movie.picture }}" alt="">
 					<h2>{{ movie.title }}</h2>
+					<img src="{{ movie.picture }}" alt="">
 					<p>{{ movie.description }}</p>
 				</div>
 			</a>
