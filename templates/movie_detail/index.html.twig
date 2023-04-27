@@ -74,6 +74,9 @@
 	<img src="{{ movie.picture }}" alt="" width="200px">
 	<br>
 	<div class="genre">Action</div>
+	{% for mood in movie.moods %}
+		<p>{{ mood.name }}</p>
+	{% endfor %}
 	<div class="genre">Adventure</div>
 	<div class="genre">Science Fiction</div>
 	<h2>Publication Date:</h2>
